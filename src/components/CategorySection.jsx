@@ -86,10 +86,13 @@ function CategorySection({ category, projects }) {
                 key={project.id}
                 sx={{
                   flex: `0 0 ${slideWidth}px`,
+                  willChange: "box-shadow", // GPU acceleration hint for Safari/iOS
                   transition: "box-shadow 0.3s ease",
                   borderRadius: 2,
+                  WebkitBoxShadow: "0px 0px 0px 0px transparent", // Webkit prefix for older iOS
                   "&:hover": {
-                    boxShadow: "0 10px 30px rgba(224, 145, 204, 0.3)",
+                    boxShadow: "0px 10px 30px 0px rgba(251, 109, 72, 0.3)", // Orange shadow
+                    WebkitBoxShadow: "0px 10px 30px 0px rgba(251, 109, 72, 0.3)",
                   },
                 }}
               >
